@@ -1,13 +1,11 @@
 import { Router } from "express";
+import { getwebsiteDetails, postwebsiteDetails } from "../../controllers/websiteControllers";
 const router = Router();
 
-router.post("/website", async(req,res)=>{
+router.post("/website", postwebsiteDetails);
 
-});
-
-router.get("/status/:websiteId", async(req,res)=>{
-    
-})
+router.get("/", getwebsiteDetails)
+// router.get("/status/:websiteId", getwebsiteDetails)
 
 
 export default router

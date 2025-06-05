@@ -3,6 +3,7 @@ import Routes from "./routes/v1/index"
 const PORT = process.env.PORT || 3000;
 const app  = express();
 
+app.use(express.json());
 app.use("/api/v1", Routes)
 
 app.listen(PORT,()=>{
