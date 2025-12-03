@@ -5,7 +5,7 @@ const base_url = "http://localhost:3000/api/v1"
 
 
 describe("website get creeated", ()=>{
-  it("Website created if url is not present", async()=>{
+  it("Website not created if url is not present", async()=>{
     try {
         await axios.post(`${base_url}/website/`, {
     
@@ -19,7 +19,7 @@ describe("website get creeated", ()=>{
         const res = await axios.post(`${base_url}/website/`, {
             url:"amazon.com"
         })
-        console.log(res);
+        console.log(res.data);
         
         expect(res.data.id).not.toBeNull();
      
