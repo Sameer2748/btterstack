@@ -1,7 +1,8 @@
 import axios from "axios"
 import {describe, expect, it} from "bun:test"
 
-const base_url = "http://localhost:3000/api/v1"
+// const base_url = "http://localhost:3000/api/v1"
+const base_url = "http://localhost:3002"
 
 
 describe("website get creeated", ()=>{
@@ -16,11 +17,10 @@ describe("website get creeated", ()=>{
     }
   })
   it("Website created if url is present", async()=>{
-        const res = await axios.post(`${base_url}/website/`, {
+        const res = await axios.post(`${base_url}/website`, {
             url:"amazon.com"
         })
-        console.log(res.data);
-        
+      
         expect(res.data.id).not.toBeNull();
      
   })
